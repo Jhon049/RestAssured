@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
-import io.restassured.internal.matcher.xml.XmlDtdMatcher;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.http.HttpStatus;
@@ -15,9 +14,9 @@ import org.junit.jupiter.api.Assertions;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class ListStepDefinitions  extends ServiceSetUp {
+public class ReqStepDefinitions extends ServiceSetUp {
 
-    public static final Logger LOGGER = Logger.getLogger(ListStepDefinitions.class);
+    public static final Logger LOGGER = Logger.getLogger(ReqStepDefinitions.class);
     private Response response;
     private RequestSpecification resquest;
 
