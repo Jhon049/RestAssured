@@ -1,0 +1,10 @@
+
+e	java:S116"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™öŸÇ
+g	java:S116"RRename this field "Contact" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï®Âº
+
+java:S1130-"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ñŒ˜í
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹äƒ şÿÿÿÿ
