@@ -24,7 +24,7 @@ public class ListStepDefinitions  extends ServiceSetUp {
     @Given("Envio el request a la URL definida")
     public void envioElRequestALaUrlDefinida(){
         try{
-            generalSetUp();
+            generalSetUp("get");
             resquest = given()
                     .log()
                     .all()
@@ -60,5 +60,44 @@ public class ListStepDefinitions  extends ServiceSetUp {
         }
     }
 
-
+    @Given("Se envia el request del Login")
+    public void seEnviaElRequestDelLogin() {
+        try{
+            generalSetUp("post");
+            resquest = given()
+                    .log()
+                    .all()
+                    .contentType(ContentType.JSON)
+                    .body("{\n" +
+                            "    \"email\": \"eve.holt@reqres.in\",\n" +
+                            "    \"password\": \"cityslicka\"\n" +
+                            "}");
+        } catch (Exception e){
+            LOGGER.error(e.getMessage(), e);
+            Assertions.fail(e.getMessage());
+        }
+    }
+    @When("Hago la peticion post del servicio")
+    public void hagoLaPeticionPostDelServicio() {
+        try{
+            response = resquest.when()
+                    .post();
+        } catch (Exception e){
+            LOGGER.error(e.getMessage(), e);
+            Assertions.fail(e.getMessage());
+        }
+    }
+    @Then("Espero que retorne el token")
+    public void esperoQueRetorneElToken() {
+        try{
+            response.then()
+                    .log()
+                    .all()
+                    .statusCode(HttpStatus.SC_OK)
+                    .body("token", notNullValue());
+        } catch (Exception e){
+            LOGGER.error(e.getMessage(), e);
+            Assertions.fail(e.getMessage());
+        }
+    }
 }
